@@ -72,12 +72,16 @@ class PersonsViewController: UIViewController {
             if personList.count > Constants.tableViewMaxCountForA{
                 self.personListForViewA = Array(personList[0...19])
                 self.personListForViewB = Array(personList.dropFirst(Constants.tableViewMaxCountForA))
+                //UI Api should only be called with main thread
                 DispatchQueue.main.async {
                     self.loadTableView()
                 }
             }else{
                 self.personListForViewA = personList
-                self.loadTableView()
+                //UI Api should only be called with main thread
+                DispatchQueue.main.async {
+                    self.loadTableView()
+                }
             }
         }
     }

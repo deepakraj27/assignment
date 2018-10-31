@@ -14,5 +14,5 @@ struct Constants {
         static let viewLayoutForB = "ViewPersonListBLayout"
     }
     
-    struct tableViewMaxCountForA = 20
+    static let tableViewMaxCountForA = 20
 }
